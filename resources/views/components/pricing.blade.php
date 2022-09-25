@@ -91,7 +91,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-primary w-100 mt-3">
+                                    <a href="{{url('/checkout', 'laravel-9-beginner')}}" class="btn btn-master btn-primary w-100 mt-3">
                                         Take This Plan
                                     </a>
                                 </p>
@@ -137,7 +137,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-secondary w-100 mt-3">
+                                    <a href="{{url('/checkout', 'baru-mulai')}}" class="btn btn-master btn-secondary w-100 mt-3">
                                         Start With This Plan
                                     </a>
                                 </p>
