@@ -26,21 +26,24 @@
                     <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Halo, {{Auth::user()->name}}
                         
-                        <a href="#" class="nav-item">  My Dashboard   </a>
-                        <a href="#" class="nav-item" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Sign Out</a>
-                        <img src="{{Auth::user()->photo}}" class="user-photo" alt="">
-                        <form method="post" action="{{url('/logout')}}" id="logoutform" style="display: none">
-                            @csrf
-                        </form>
-                        <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
                             <li>
-                                
+                               <a href="{{url('/dashboard')}}" class="nav-item">  My Dashboard   </a>
                             </li>
                             <li>
-                                
+                               <a href="#" class="nav-item" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Sign Out</a>
+                                <form method="post" action="{{url('/logout')}}" id="logout-form" style="display: none">
+                                    @csrf
+                                </form>
                             </li>
-                        </ul> -->
+                        </ul>
                     </a>
+                    @if(Auth::user()->photo)
+                        <img src="{{Auth::user()->photo}}" class="user-photo" alt="" style="border-radius: 50%;">
+                    @else
+                        <img style="border-radius: 50%;" src="https:://ui-avatars.com/api/?name=Admin" class="user-photo" alt="">
+                    @endif
+
                 </div>
                 @else
                 <div class="d-flex">

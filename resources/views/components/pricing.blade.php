@@ -137,7 +137,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="{{url('/checkout', 'baru-mulai')}}" class="btn btn-master btn-secondary w-100 mt-3">
+                                    <a href="{{url('/checkout', 'node-js-beginner')}}" class="btn btn-master btn-secondary w-100 mt-3">
                                         Start With This Plan
                                     </a>
                                 </p>

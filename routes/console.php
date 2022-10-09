@@ -17,3 +17,20 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+
+Artisan::command('migrate:fresh', function () {
+     $this->comment('You are not allowed to do this ');
+})->purpose('Savety reason');
+
+Artisan::command('migrate:rollback', function () {
+     $this->comment('You are not allowed to do this ');
+})->purpose('Savety reason');
+
+Artisan::command('migrate:reset', function () {
+     $this->comment('You are not allowed to do this ');
+})->purpose('Savety reason');
+
+Artisan::command('migrate:refresh', function () {
+     $this->comment('You are not allowed to do this ');
+})->purpose('Savety reason');

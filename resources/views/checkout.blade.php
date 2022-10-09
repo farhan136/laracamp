@@ -44,20 +44,32 @@
                                 <div class="mb-4">
                                     <label class="form-label">Occupation</label>
                                     <input name="occupation" type="text" class="form-control" value="{{Auth::user()->ocupation}}">
+                                    @error('occupation')
+                                        <span class="danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Card Number</label>
                                     <input name="card_number" type="number" class="form-control">
+                                    @error('card_number')
+                                        <span class="danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-5">
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">Expired</label>
                                             <input name="expired" type="month" class="form-control">
+                                            @error('expired')
+                                            <span class="danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">CVC</label>
                                             <input name="cvc" type="number" class="form-control" maxlength="3">
+                                            @error('cvc')
+                                            <span class="danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>

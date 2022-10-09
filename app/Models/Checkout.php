@@ -18,6 +18,15 @@ class Checkout extends Model
         'is_paid'
     ];
 
+
+    public function Camp(){
+        return $this->belongsTo(Camp::class, 'id_camps', 'id');
+    }
+
+    public function User(){
+        return $this->belongsTo(User::class, 'id_users', 'id');
+    }
+
     // public function setExpiredAttribute($value)
     // {
     //     $this->attribute('expired') = date('Y-m-t', strtotime($value));

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Auth;
+use Mail;
+Use App\Mail\AfterRegister;
 
 class UserController extends Controller
 {
@@ -28,11 +30,16 @@ class UserController extends Controller
             'photo'=>$callback->getAvatar(),
             'email_verified_at'=>date('Y-m-d H:i:s', time())
         ];
-        $user = User::firstOrCreate(['email'=>$data['email']], $data); //firstOrCreate untuk cek apakah di table sudah ada email yang sama, jika belum maka insert data ke table, jia sudah maka tidak perlu
+        // $user = User::firstOrCreate(['email'=>$data['email']], $data); //firstOrCreate untuk cek apakah di table sudah ada email yang sama, jika belum maka insert data ke table, jia sudah maka tidak perlu
+
+        $user = User::where('email', '=', $data['email'])->first(); //cek apakah ada user yang memakai email itu atau engga
+        if(!$user){
+            $user = User::create($data);
+            Mail::to($user->email)->send(new AfterRegister($user));
+        }
         Auth::login($user, true);
 
         return redirect(route('welcome'));
 
-        // dd($data);
     }
 }
